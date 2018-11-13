@@ -1,19 +1,7 @@
 # **Finding Lane Lines on the Road** 
 <img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 
---- 
-[//]: # (Image References)
 
-[image1]: ./examples/1.jpg "Original"
-[image2]: ./examples/2.jpg "Grayscale"
-[image3]: ./examples/3.jpg "Canny Edge Detection"
-[image4]: ./examples/4.jpg "Region Masking"
-[image5]: ./examples/5.jpg "Hough Transform"
-[image6]: ./examples/6.jpg "Line Extrapolation"
-[image7]: ./examples/7.jpg "Final Image"
-[gif-fail]: ./examples/fail.gif "Detection fails"
-[gif-good]: ./examples/good.gif "Good detection"
----
 
 ## Overview
 
@@ -26,32 +14,45 @@ The goal of this project is to build an algorithm with OpenCV library to detect 
 The main lane extraction algorithm consists of few steps:
 
 1. Image is imported and converted to grayscale.
-![alt text][image2]
+
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/2.png)
 
 2. Image is then passed through Gaussian Blur and Canny Edge Detection.
-![alt text][image3]
+
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/3.png)
+
 
 3. Region of interest masking is applied to the lower triangle to eliminate irrelevant lines in the image.
-![alt text][image4]
+
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/4.png)
+
 
 4. Then Hough Transform is applied to get each smaller line segments.
-![alt text][image5]
+
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/5.png)
+
 
 5. Line segments are filtered, averaged and extrapolated to cover the entire straight line. Only lines within certain range of slopes with respect to the camera perspective are added to the image to minimize Hough Transform noises. 
-![alt text][image6]
+
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/6.png)
+
 
 6. Extrapolated lines are drawn over original image
-![alt text][image7]
+
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/7.png)
+
 
 7. Applied on videos
-![alt text][gif-good]
+
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/good.gif)
+
 
 ## Potential shortcomings with this pipeline
 
 
 Currently the pipeline is very dependent on good lighting and clear markings as the line extraction is obtained from Canny Edge Detection and Hough Transform. Shadows, low contrast, broken or blurry lines can decrease the performance of two algorithms needed in this line extraction algorithm. An example can be seen here.
 
-![alt text][gif-fail]
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/fail.gif)
 
 
 ## Potential improvements to the algorithm
