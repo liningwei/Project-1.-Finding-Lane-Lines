@@ -26,7 +26,7 @@ The goal of this project is to build an algorithm with OpenCV library to detect 
 The main lane extraction algorithm consists of few steps:
 
 1. Image is imported and converted to grayscale.
-![alt text][image2]
+![alt text]./examples/1.jpg "Original"
 
 2. Image is then passed through Gaussian Blur and Canny Edge Detection.
 ![alt text][image3]
