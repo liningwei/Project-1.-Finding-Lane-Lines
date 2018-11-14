@@ -44,8 +44,8 @@ The main lane extraction algorithm consists of few steps:
 
 7. Applied on videos
 
-![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/good.gif)
-
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/good1.gif)
+![alt text](https://raw.githubusercontent.com/liningwei/Project-1.-Finding-Lane-Lines/master/examples/good2.gif)
 
 ## Potential shortcomings with this pipeline
 
